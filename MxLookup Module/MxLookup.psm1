@@ -25,6 +25,9 @@ Function Connect-MXOnline (){
               $URL = "https://api.mxtoolbox.com/api/v1/usage/"
               
               Write-Verbose $URL
+              
+              Write-Verbose "Enabling TLS1.2 by default for this session"
+              [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12;
           }
   
       process
